@@ -4,12 +4,13 @@
   //   var(--gray1e) 80%,
   //   var(--body-bg) 80%
   // );
+  background: white;
   margin-bottom: 140px;
   &-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 48px 0 83px;
+    padding: 20px 0 83px;
   }
   &-logo { 
     display: flex;
@@ -26,8 +27,8 @@
     display: inline-block;
   }
   &-logo-image {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    
   }
   &-login {
     display: inline-block;
@@ -72,7 +73,7 @@
   @include maxWidth(1023px) {
     margin-bottom: 60px;
     &-top {
-      justify-content: flex-start;
+      justify-content: space-between;
     }
     &-logo {
       font-size: 20px;
