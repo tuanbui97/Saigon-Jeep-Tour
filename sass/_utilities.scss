@@ -1,3 +1,4 @@
+@use "sass:map";
 $utilities: (
   "display": (
     "prefix": "d",
@@ -9,38 +10,38 @@ $utilities: (
       "inline-block": inline-block,
       "inline-flex": inline-flex,
       "grid": grid,
-      "table": table,
+      "table": table
     )
   ),
   "padding": (
-    "prefix": "p",
+    "prefix": "p"
   ),
   "padding-left": (
-    "prefix": "pl",
+    "prefix": "pl"
   ),
   "padding-right": (
-    "prefix": "pr",
+    "prefix": "pr"
   ),
   "padding-top": (
-    "prefix": "pt",
+    "prefix": "pt"
   ),
   "padding-bottom": (
-    "prefix": "pb",
+    "prefix": "pb"
   ),
   "margin": (
-    "prefix": "m",
+    "prefix": "m"
   ),
   "margin-left": (
-    "prefix": "ml",
+    "prefix": "ml"
   ),
   "margin-right": (
-    "prefix": "mr",
+    "prefix": "mr"
   ),
   "margin-top": (
-    "prefix": "mt",
+    "prefix": "mt"
   ),
   "margin-bottom": (
-    "prefix": "mb",
+    "prefix": "mb"
   ),
   "border-radius": (
     "prefix": "rounded",
@@ -53,10 +54,9 @@ $utilities: (
       "xl": 12px,
       "2xl": 14px,
       "3xl": 16px,
-      "full": 50%,
+      "full": 50%
     )
   )
-
 );
 
 // display:
@@ -64,14 +64,14 @@ $utilities: (
   $prefix: map-get($map, "prefix");
   $values: map-get($map, "values");
   @each $k, $v in $values {
-    .#{$prefix}-#{$k}{
+    .#{$prefix}-#{$k} {
       #{$property}: $v;
     }
   }
 }
-$align-items: center,start,end;
+$align-items: center, start, end;
 @each $val in $align-items {
-  @if($val == center) {
+  @if ($val == center) {
     .align-items-#{$val} {
       align-items: $val;
     }
@@ -81,9 +81,9 @@ $align-items: center,start,end;
     }
   }
 }
-$justify-content: center,start,end,around,between;
+$justify-content: center, start, end, around, between;
 @each $key in $justify-content {
-  @if($key == around) or ($key == between) {
+  @if ($key == around) or ($key == between) {
     .justify-#{$key} {
       justify-content: space-#{$key};
     }
@@ -117,26 +117,26 @@ $justify-content: center,start,end,around,between;
 .h-full {
   height: 100% !important;
 }
-.flex-50{
+.flex-50 {
   flex: 0 0 50%;
 }
-.flex-33{
+.flex-33 {
   flex: 0 0 33.333%;
 }
-.flex-30{
+.flex-30 {
   flex: 0 0 30%;
 }
-.flex-10{
+.flex-10 {
   flex: 0 0 10%;
 }
-.flex-100{
+.flex-100 {
   flex: 0 0 100%;
 }
 // spacing:
 @each $property, $map in $utilities {
   $prefix: map-get($map, "prefix");
   @for $i from 1 through 80 {
-    .#{$prefix}-#{$i}{
+    .#{$prefix}-#{$i} {
       #{$property}: #{$i}px;
     }
   }
@@ -149,4 +149,3 @@ $positions: relative, absolute, fixed, sticky;
     position: $val;
   }
 }
-

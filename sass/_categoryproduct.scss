@@ -1,0 +1,28 @@
+.categoryproduct {
+    margin-top: 86px;
+    .banner {
+        margin-top: 24px;
+        &-img {
+            width: 100%;
+            object-fit: cover;
+            height: 300px;
+        }
+    }
+    &-list {
+        margin-top: 24px;
+        display: grid;
+        gap: 1em; // thay cho column/row-gap
+
+        // Desktop: số cột tự co giãn, mỗi item min 220px, còn lại chiếm đều
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+        // Tablet + mobile: fix 2 cột
+        @include tablet {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+}

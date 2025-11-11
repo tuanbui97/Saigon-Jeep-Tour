@@ -1,0 +1,36 @@
+@mixin stagger-drop($items: 10, $delay: 0.1s, $duration: 0.5s, $distance: 20px) {
+    // keyframes dùng chung
+    @keyframes drop-down {
+        from {
+            opacity: 0;
+            transform: translateY(-$distance);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    // style mặc định cho item
+    opacity: 0;
+    transform: translateY(-$distance);
+    animation: drop-down $duration ease forwards;
+
+    // gán delay theo thứ tự
+    @for $i from 1 through $items {
+        &:nth-child(#{$i}) {
+            animation-delay: $i * $delay;
+        }
+    }
+}
+
+@mixin hover-drop($distance:5px, $duration: 0.3s) {
+    position: relative;
+    transition:
+        transform $duration ease,
+        background-color $duration ease;
+
+    &:hover {
+        transform: translateY(-$distance);
+    }
+}

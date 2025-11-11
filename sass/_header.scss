@@ -61,7 +61,6 @@
 
   &-wapper {
     width: 100%;
-
   }
 
   background: white;
@@ -117,6 +116,9 @@
 
   // Category menu
   .navigate {
+    @include mobile {
+      display: none;
+    }
     background: var(--primary-color);
     display: flex;
     position: relative;
@@ -126,6 +128,7 @@
     }
 
     .category-menu {
+      margin-right: 150px;
       width: 260px;
       position: relative;
       padding: 16px;
@@ -198,8 +201,6 @@
     }
   }
 
-
-
   &-logo {
     display: flex;
     align-items: center;
@@ -265,41 +266,40 @@
     color: white;
     font-size: 18px;
   }
+  // @include maxWidth(1023px) {
+  //   margin-bottom: 60px;
 
-  @include maxWidth(1023px) {
-    margin-bottom: 60px;
+  //   &-top {
+  //     justify-content: space-between;
+  //   }
 
-    &-top {
-      justify-content: space-between;
-    }
+  //   &-logo {
+  //     font-size: 20px;
+  //   }
 
-    &-logo {
-      font-size: 20px;
-    }
+  //   &-top {
+  //     padding: 25px 0 55px;
+  //   }
 
-    &-top {
-      padding: 25px 0 55px;
-    }
+  //   &-heading {
+  //     font-size: 30px;
+  //     line-height: 1.5;
+  //     margin-bottom: 35px;
+  //   }
 
-    &-heading {
-      font-size: 30px;
-      line-height: 1.5;
-      margin-bottom: 35px;
-    }
+  //   &-login {
+  //     font-size: 12px;
+  //     margin-left: auto;
+  //     margin-right: 40px;
+  //   }
 
-    &-login {
-      font-size: 12px;
-      margin-left: auto;
-      margin-right: 40px;
-    }
+  //   &-buttons {
+  //     gap: 0 20px;
+  //     margin-bottom: 64px;
+  //   }
 
-    &-buttons {
-      gap: 0 20px;
-      margin-bottom: 64px;
-    }
-
-    &-works span {
-      display: none;
-    }
-  }
+  //   &-works span {
+  //     display: none;
+  //   }
+  // }
 }

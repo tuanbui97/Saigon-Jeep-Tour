@@ -1,0 +1,13 @@
+.title {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 32px;
+}
+.divider {
+    border: 2px solid var(--primary-color);
+    border-radius: 9px;
+    &.s-20 {
+        width: 20%;
+    }
+    margin: 12px 0;
+}

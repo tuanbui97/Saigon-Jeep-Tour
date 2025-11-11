@@ -1,0 +1,125 @@
+.product-item {
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-bottom: 12px;
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+
+    // ----- HOVER CARD -----
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        // ảnh + nút khi hover
+        .product-item--media {
+            .main {
+                opacity: 0;
+                transform: translateY(-5px) scale(0.98);
+            }
+
+            .default {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .product-item--quickview {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+    }
+
+    &--media {
+        position: relative;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .label {
+            position: absolute;
+            z-index: 8;
+            top: 8px;
+            left: 12px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        img {
+            height: 400px;
+            object-fit: contain;
+            width: 100%;
+            display: block;
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        // Ảnh chính: luôn hiện lúc đầu
+        .main {
+            position: relative;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        // Ảnh default: nằm chồng lên nhưng ẩn
+        .default {
+            position: absolute;
+            inset: 0px; // khớp padding
+            opacity: 0;
+            transform: translateY(10px) scale(0.95);
+        }
+    }
+
+    &--quickview {
+        width: 100%;
+        border: none;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 6px 0;
+        background-color: var(--primary-color);
+        color: #fff;
+        cursor: pointer;
+        display: none;
+        opacity: 0;
+        transform: translateY(8px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    &--info {
+        padding: 0 10px;
+    }
+
+    &--title {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 8px 0 4px;
+    }
+
+    &--price {
+        font-size: 14px;
+
+        .old {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 4px;
+            font-size: 13px;
+        }
+
+        .current {
+            font-weight: 700;
+            color: #000;
+        }
+    }
+}

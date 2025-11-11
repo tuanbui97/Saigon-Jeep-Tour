@@ -1,0 +1,23 @@
+.new {
+    margin-top: 86px;
+    &-list {
+        display: flex;
+        gap: 0 16px;
+        &--item {
+            .image {
+                margin-block: 8px;
+                width: 100%;
+            }
+            .title {
+                font-size: 16px;
+                margin-block: 8px;
+                @include ellipsis(2);
+            }
+            .description {
+                font-size: 16px;
+                margin-block: 8px;
+                @include ellipsis(2);
+            }
+        }
+    }
+}

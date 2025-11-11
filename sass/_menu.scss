@@ -12,18 +12,19 @@
   }
 
   &-link {
-    color: var(--grayb5);
+    color: #e3e3e3;
     position: relative;
     display: inline-block;
     transition: color 0.25s ease-out;
-
+    &.is-active {
+      font-weight: 700;
+      color: white;
+    }
     &:before {
       content: "";
       height: 2px;
       width: 0;
-      background-image: linear-gradient(to right bottom,
-          var(--primary-color),
-          var(--primary-yellow));
+      background-image: linear-gradient(to right bottom, var(--primary-color), var(--primary-yellow));
       position: absolute;
       bottom: -2px;
       left: 0;
@@ -31,7 +32,7 @@
     }
 
     &:hover {
-      color: var(--white);
+      color: #c9bea0fc;
 
       &:before {
         width: 100%;
@@ -44,31 +45,59 @@
     left: 0;
     bottom: 0;
     top: 0;
-    width: 300px;
+    width: 250px;
     background-color: var(--secondary-color);
     z-index: 9;
     flex-direction: column;
     align-items: stretch;
+    transform: translateX(-100%);
     transition: transform 0.25s ease-in;
-    background-color: hsla(0, 0%, 100%, .95);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
+    background-color: hsla(0, 0%, 100%, 0.95);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     &.is-show {
       transform: none;
     }
     &-item {
-      margin-bottom: 15px;
+      border-bottom: 1px solid var(--primary-color);
     }
 
     &-link {
       display: block;
       padding: 15px;
-
+      color: var(--primary-color);
       &:before {
         display: none;
+      }
+      &.is-active {
+        font-weight: 600;
+        color: var(--primary-color);
       }
     }
     &-toggle {
       display: inline-block;
     }
   }
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0; // tương đương top:0; right:0; bottom:0; left:0;
+  background: rgba(0, 0, 0, 0.5); // làm tối
+  backdrop-filter: blur(3px); // ✅ làm mờ nền phía sau
+  z-index: 8; // thấp hơn .menu (menu z-index:9)
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+
+// Khi bật overlay
+.menu-overlay.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.body-no-scroll {
+  position: fixed; /* khóa body tại chỗ */
+  overflow: hidden; /* không cho scroll */
+  width: 100%;
 }

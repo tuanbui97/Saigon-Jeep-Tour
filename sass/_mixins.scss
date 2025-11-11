@@ -1,6 +1,3 @@
-
-
-
 $tablet-width: 768px !default;
 $desktop-width: 1024px !default;
 $breakpoints: (
@@ -8,24 +5,24 @@ $breakpoints: (
   "sm": 425px,
   "md": 768px,
   "lg": 1024px,
-  "xl": 1440px,
+  "xl": 1440px
 ) !default;
 
 @mixin mobile {
-  @media (min-width: 0) and (max-width: $tablet-width - 1){
-    @content
+  @media (min-width: 0) and (max-width: $tablet-width - 1) {
+    @content;
   }
 }
 
 @mixin tablet {
-  @media (min-width: 0) and (max-width: $desktop-width - 1){
-    @content
+  @media (min-width: 0) and (max-width: $desktop-width - 1) {
+    @content;
   }
 }
 
 @mixin desktop {
   @media (min-width: $desktop-width) {
-    @content
+    @content;
   }
 }
 
@@ -33,15 +30,15 @@ $breakpoints: (
   @each $key in $keys {
     @if ($key == mobile) {
       @include mobile {
-        @content
+        @content;
       }
     } @else if ($key == tablet) {
       @include tablet {
-        @content
+        @content;
       }
     } @else if ($key == desktop) {
       @include desktop {
-        @content
+        @content;
       }
     }
   }
@@ -83,8 +80,8 @@ $breakpoints: (
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: $line;
-  line-clamp: $line;
+  -webkit-line-clamp: $line !important;
+  line-clamp: $line !important;
   -webkit-box-orient: vertical;
 }
 @mixin sectionBg($direction: "left") {
@@ -109,5 +106,3 @@ $breakpoints: (
     @content;
   }
 }
-
-
