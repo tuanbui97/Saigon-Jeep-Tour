@@ -2,12 +2,14 @@ window.addEventListener("load", function () {
   // ========== MENU TOGGLE (đoạn cũ của bạn) ==========
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
-
-  toggle && toggle.addEventListener("click", handleToggleMenu);
-
-  function handleToggleMenu(e) {
+  console.log('toggle', menu);
+  console.log('menu', menu);
+  function handleToggleMenu() {
     menu && menu.classList.add("is-show");
   }
+  toggle && toggle.addEventListener("click", handleToggleMenu);
+
+
 
   document.addEventListener("click", handleClickOutside);
 

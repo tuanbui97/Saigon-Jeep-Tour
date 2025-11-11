@@ -4,10 +4,8 @@
   gap: 0 36px;
   list-style: none;
   padding: 0;
-
   &-toggle {
     display: none;
-
     * {
       pointer-events: none;
     }
@@ -51,15 +49,12 @@
     z-index: 9;
     flex-direction: column;
     align-items: stretch;
-    transform: translate(150%, 0);
     transition: transform 0.25s ease-in;
     background-color: hsla(0, 0%, 100%, .95);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5);
-
     &.is-show {
       transform: none;
     }
-
     &-item {
       margin-bottom: 15px;
     }
@@ -72,7 +67,6 @@
         display: none;
       }
     }
-
     &-toggle {
       display: inline-block;
     }

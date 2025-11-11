@@ -123,10 +123,6 @@
 
     &-menu {
       display: flex !important;
-
-      @include mobile {
-        display: none !important;
-      }
     }
 
     .category-menu {
