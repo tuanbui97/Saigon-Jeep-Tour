@@ -12,9 +12,13 @@ window.addEventListener("load", function () {
   document.addEventListener("click", handleClickOutside);
 
   function handleClickOutside(e) {
-    if (e.target.matches(".menu-toggle") || e.target.matches(".menu, .menu *"))
-      return;
-    menu && menu.classList.remove("is-show");
+    console.log('e', e.target.matches(".menu-toggle"));
+
+    if (e.target.matches(".menu-toggle") || e.target.matches(".menu, .menu *")) {
+      menu && menu.classList.remove("is-show");
+
+    }
+    // return;
   }
 
   // ========== STICKY HEADER + ANIMATION ==========

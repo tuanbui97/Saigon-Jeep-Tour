@@ -19,94 +19,114 @@
 <body>
   <div>
     <header class="header">
-      <div class="container">
-        <div class="header-top">
-          <div>
-            <img class="header-top--img" src="./images/header/chipchipLogo.jpg">
-          </div>
-          <div class="input-group" style="width: 70%;">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">Tất cả sản phẩm</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              <li>
-                <hr class="dropdown-divider">
+      <div class="header-wapper">
+        <div class="container">
+          <div class="header-top">
+            <ul class="header-top--menu menu">
+              <li class="menu-item">
+                <a href="#" class="menu-link">Trang chủ</a>
               </li>
-              <li><a class="dropdown-item" href="#">Separated link</a></li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Giới thiệu</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Cửa hàng</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Liên Hệ</a>
+              </li>
+              <li class="menu-item">
+                <a href="#" class="menu-link">Tin tức</a>
+              </li>
             </ul>
-            <input type="text" class="form-control" aria-label="Text input with dropdown button">
-            <span class="input-group-text"><i class="bi bi-search"></i></span>
-          </div>
-          <div class="header-top--group d-flex justify-between">
-            <div class="box">
-              <i class="box-icon bi bi-heart-fill"></i>
+            <span class="menu-toggle">
+              <svg width="20" height="20" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="13" height="2" fill="#947e1a" />
+                <rect y="5" width="13" height="2" fill="#947e1a" />
+                <rect y="10" width="13" height="2" fill="#947e1a" />
+              </svg>
+            </span>
+            <div>
+              <img class="header-top--img" src="./images/header/chipchipLogo.jpg">
             </div>
-            <div class="line"></div>
-            <div class="box">
-              <i class="box-icon bi bi-heart-fill"></i>
+            <div class="input-group header-top--search" style="width: 70%;">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Tất cả sản phẩm</button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Separated link</a></li>
+              </ul>
+              <input type="text" class="form-control" aria-label="Text input with dropdown button">
+              <span class="input-group-text"><i class="bi bi-search"></i></span>
             </div>
-            <div class="line"></div>
-            <div class="box">
-              <i class="box-icon bi bi-heart-fill"></i>
+            <div class="header-top--group d-flex justify-between">
+              <div class="box">
+                <i class="box-icon bi bi-heart-fill"></i>
+              </div>
+              <div class="line"></div>
+              <div class="box">
+                <i class="box-icon bi bi-heart-fill"></i>
+              </div>
+              <div class="line"></div>
+              <div class="box">
+                <i class="box-icon bi bi-heart-fill"></i>
+              </div>
             </div>
           </div>
         </div>
-        <!--        <a href="index.html" class="header-logo">
-              <img src="/images/logo-icon.svg" alt="" />
-              <span class="header-logo-text">Type Email</span>
-            </a>
-            <ul class="menu">
-              <li class="menu-item">
-                <a href="#" class="menu-link">Home</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="menu-link">Pricing</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="menu-link">Resources</a>
-              </li>
-              <li class="menu-item">
-                <a href="#" class="menu-link">Support</a>
-              </li>
-            </ul>
-            <a href="#" class="header-login">Login</a>
-            <span class="menu-toggle">
-              <svg
-                width="13"
-                height="12"
-                viewBox="0 0 13 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="13" height="2" fill="#82E263" />
-                <rect y="5" width="13" height="2" fill="#82E263" />
-                <rect y="10" width="13" height="2" fill="#82E263" />
-              </svg>
-            </span> -->
-        <!-- <div class="header-content">
-            <h1 class="header-heading text-primary">
-              Online shoppers into loyal, lifetime customers with email & sms
-              marketing
-            </h1>
-            <div class="header-buttons">
-              <a href="#" class="header-started button button--primary"
-                >Get started</a
-              >
-              <a href="#" class="header-works">
-                <span>How it works</span>
-                <img src="/images/icon-play.svg" alt="" />
-              </a>
+        <div class="navigate">
+          <div class="container">
+            <div class="d-flex align-items-center">
+              <div class="category-menu" id="menu-toggle">
+                <div class="d-flex justify-between align-items-center">
+                  <i style="color: white;" class="bi bi-list"></i>
+                  <p style="color: white">Danh mục sản phẩm</p>
+                  <i style="color: white;" class="bi bi-chevron-down"></i>
+                </div>
+                <ul class="category-list">
+                  <li>Máy tính</li>
+                  <li>Phụ kiện máy tính</li>
+                  <li>Thiết bị điện</li>
+                  <li>Thiết bị gia dụng</li>
+                  <li>Điều hoà</li>
+                  <li>Tủ lạnh</li>
+                </ul>
+              </div>
+              <div>
+                <ul class="navigate-menu menu">
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">Trang chủ</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">Giới thiệu</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">Cửa hàng</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">Liên Hệ</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="#" class="menu-link">Tin tức</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div> -->
-        <!-- <div class="header-image">
-            <img srcset="/images/img1.png 2x" alt="" />
-          </div> -->
+          </div>
+        </div>
       </div>
     </header>
+
     <div class="wrapper">
       <main>
+        <section>
+
+        </section>
         <section class="countdown">
           <div class="container">
             <div class="countdown-list">
