@@ -1,18 +1,94 @@
 .header {
-  // background-image: linear-gradient(
-  //   to bottom,
-  //   var(--gray1e) 80%,
-  //   var(--body-bg) 80%
-  // );
+  position: relative;
+  z-index: 100;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+
+  &.header--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 0; // tránh bị cộng dồn khoảng trắng
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    animation: headerSlideDown 0.8s ease-out;
+  }
+
+  &-top {
+    transition: padding 0.3s ease;
+  }
+
+  &.header--sticky &-top {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .header.header--sticky {
+    padding-top: 140px; // bằng với margin-bottom: 140px ban đầu của header
+    transition: padding-top 0.3s ease;
+    background: transparent;
+  }
+
+  @keyframes headerSlideDown {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .dropdown-item {
+    &:active {
+      background-color: var(--primary-color) !important;
+    }
+    &:hover {
+      color: var(--white);
+      background-color: var(--primary-color);
+    }
+    &.focus {
+      background-color: var(--primary-color);
+    }
+  }
   background: white;
   margin-bottom: 140px;
   &-top {
+    padding: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0 83px;
+    gap: 16px;
+    &--img {
+      width: 50px;
+      height: 50px;
+    }
+    &--group {
+      .box {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 4px 8px;
+        background-color: var(--primary-color);
+        border-radius: 6px;
+        &-icon {
+          color: white;
+        }
+      }
+    }
   }
-  &-logo { 
+  .line {
+    align-self: stretch;
+    margin: 0 14px;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &-logo {
     display: flex;
     align-items: center;
     gap: 0 15px;
@@ -28,7 +104,6 @@
   }
   &-logo-image {
     width: 80px;
-    
   }
   &-login {
     display: inline-block;

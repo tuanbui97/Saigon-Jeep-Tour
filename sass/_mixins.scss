@@ -1,3 +1,92 @@
+
+
+
+$tablet-width: 768px !default;
+$desktop-width: 1024px !default;
+$breakpoints: (
+  "xs": 375px,
+  "sm": 425px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1440px,
+) !default;
+
+@mixin mobile {
+  @media (min-width: 0) and (max-width: $tablet-width - 1){
+    @content
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 0) and (max-width: $desktop-width - 1){
+    @content
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content
+  }
+}
+
+@mixin media($keys...) {
+  @each $key in $keys {
+    @if ($key == mobile) {
+      @include mobile {
+        @content
+      }
+    } @else if ($key == tablet) {
+      @include tablet {
+        @content
+      }
+    } @else if ($key == desktop) {
+      @include desktop {
+        @content
+      }
+    }
+  }
+}
+
+@mixin xl {
+  @media screen and (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin lg {
+  @media screen and (min-width: map-get($breakpoints, "xl") - 1) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: map-get($breakpoints, "lg") - 1) {
+    @content;
+  }
+}
+@mixin sm {
+  @media screen and (max-width: map-get($breakpoints, "md") - 1) {
+    @content;
+  }
+}
+@mixin xs {
+  @media screen and (max-width: map-get($breakpoints, "sm") - 1) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}
+
+@mixin ellipsis($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
 @mixin sectionBg($direction: "left") {
   position: relative;
   &:after {
@@ -20,3 +109,5 @@
     @content;
   }
 }
+
+

@@ -1,0 +1,152 @@
+$utilities: (
+  "display": (
+    "prefix": "d",
+    "values": (
+      "none": none,
+      "block": block,
+      "flex": flex,
+      "inline": inline,
+      "inline-block": inline-block,
+      "inline-flex": inline-flex,
+      "grid": grid,
+      "table": table,
+    )
+  ),
+  "padding": (
+    "prefix": "p",
+  ),
+  "padding-left": (
+    "prefix": "pl",
+  ),
+  "padding-right": (
+    "prefix": "pr",
+  ),
+  "padding-top": (
+    "prefix": "pt",
+  ),
+  "padding-bottom": (
+    "prefix": "pb",
+  ),
+  "margin": (
+    "prefix": "m",
+  ),
+  "margin-left": (
+    "prefix": "ml",
+  ),
+  "margin-right": (
+    "prefix": "mr",
+  ),
+  "margin-top": (
+    "prefix": "mt",
+  ),
+  "margin-bottom": (
+    "prefix": "mb",
+  ),
+  "border-radius": (
+    "prefix": "rounded",
+    "values": (
+      "md": 8px,
+      "0": 0,
+      "xs": 4px,
+      "sm": 6px,
+      "lg": 10px,
+      "xl": 12px,
+      "2xl": 14px,
+      "3xl": 16px,
+      "full": 50%,
+    )
+  )
+
+);
+
+// display:
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  $values: map-get($map, "values");
+  @each $k, $v in $values {
+    .#{$prefix}-#{$k}{
+      #{$property}: $v;
+    }
+  }
+}
+$align-items: center,start,end;
+@each $val in $align-items {
+  @if($val == center) {
+    .align-items-#{$val} {
+      align-items: $val;
+    }
+  } @else {
+    .align-items-#{$val} {
+      align-items: flex-#{$val};
+    }
+  }
+}
+$justify-content: center,start,end,around,between;
+@each $key in $justify-content {
+  @if($key == around) or ($key == between) {
+    .justify-#{$key} {
+      justify-content: space-#{$key};
+    }
+  } @else if($key == start) or ($key == end) {
+    .justify-#{$key} {
+      justify-content: flex-#{$key};
+    }
+  } @else {
+    .justify-#{$key} {
+      justify-content: $key;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+.flex-col {
+  flex-direction: column;
+}
+.w-full {
+  width: 100% !important;
+}
+.h-full {
+  height: 100% !important;
+}
+.flex-50{
+  flex: 0 0 50%;
+}
+.flex-33{
+  flex: 0 0 33.333%;
+}
+.flex-30{
+  flex: 0 0 30%;
+}
+.flex-10{
+  flex: 0 0 10%;
+}
+.flex-100{
+  flex: 0 0 100%;
+}
+// spacing:
+@each $property, $map in $utilities {
+  $prefix: map-get($map, "prefix");
+  @for $i from 1 through 80 {
+    .#{$prefix}-#{$i}{
+      #{$property}: #{$i}px;
+    }
+  }
+}
+
+// positions:
+$positions: relative, absolute, fixed, sticky;
+@each $val in $positions {
+  .#{$val} {
+    position: $val;
+  }
+}
+
